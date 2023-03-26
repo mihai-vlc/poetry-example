@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "my_api"
+version = "0.1.0"
+description = ""
+authors = ["Mihai Ionut Vilcu <ionutvmi@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "my_api", from = "src"}]
+
+[tool.poetry.scripts]
+start = 'my_api.main:run'
+lint = 'scripts:run_lint'
+test = { callable = 'scripts:run_all_tests', extras = ["test"] }
+test_watch = { callable = 'scripts:watch_tests', extras = ["test"] }
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.95.0"
+
+[tool.poetry.group.dev.dependencies]
+watchdog = "^3.0.0"
+autopep8 = "^2.0.2"
+pyright = "^1.1.300"
+pycodestyle = "^2.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.extras]
+test = []
+
+[tool.pyright]
+
