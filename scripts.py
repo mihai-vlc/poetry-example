@@ -1,4 +1,6 @@
 # pyright: reportUnknownMemberType=false
+# pyright: reportUnknownVariableType=false
+# pyright: reportMissingTypeStubs=false
 import pyright
 from watchdog.events import PatternMatchingEventHandler, FileModifiedEvent
 from watchdog.observers import Observer
